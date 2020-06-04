@@ -15,6 +15,23 @@
 	<script src="./library/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script async="" src="./library/bundle.js"></script>
 	<script>
+
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			return vars;
+		}
+
+		function getUrlParam(parameter, defaultvalue){
+			var urlparameter = defaultvalue;
+			if(window.location.href.indexOf(parameter) > -1){
+				urlparameter = getUrlVars()[parameter];
+				}
+			return urlparameter;
+		}
+
 		$(document).ready(function(){ 
 
 
@@ -38,7 +55,7 @@
 			$("#clear .btn").click(function(){
 			console.log('OK Click clear' )
 
-			console.log( "URL ... ", window.location.href )
+			console.log( "URL ... ", getUrlParam( 'value', 'empty' ))
 
 
 			});
