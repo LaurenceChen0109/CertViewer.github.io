@@ -34,6 +34,15 @@
 
 		$(document).ready(function(){ 
 
+			console.log( "URL ... \n", window.location.href )
+
+			var cert = decodeURI(getUrlParam( 'value', 'empty' ))
+			cert = cert.substring(1, cert.length)
+			cert = cert.substring(0, cert.length-1)
+			console.log( "Param.. \n", cert )
+
+			$('#certificate').text( cert )
+
 
 
 			$("#upload .btn").click(function(){
@@ -54,15 +63,6 @@
 			
 			$("#clearData .btn").click(function(){
 			console.log('OK Click clear' )
-
-			console.log( "URL ... \n", window.location.href )
-
-			var cert = decodeURI(getUrlParam( 'value', 'empty' ))
-			cert = cert.substring(1, cert.length)
-			cert = cert.substring(0, cert.length-1)
-			console.log( "Param.. \n", cert )
-
-			$('#certificate').text( cert )
 
 
 			});
@@ -87,7 +87,7 @@
 <body dir="ltr"><div class="container mt-2"><div id="form" class="mt-2 mb-2"><div class="container"><div class="row"><div class="col"><div class="card"><div class="card-body">
 	<form>
 		<div class="form-group">
-			<textarea class="form-control certificate" id="certificate" rows="8" style="white-space: pre" required="" autofocus="" placeholder="-----BEGIN CERTIFICATE---	--MIId..."></textarea>
+			<textarea class="form-control certificate" id="certificate" rows="8" style="white-space: pre" required="" autofocus="" ></textarea>
 
 			<div class="position-absolute d-none d-lg-block"><small class="text-muted">You can drag and drop files above</small></div>
 			<div id="buttons-container" class="text-right mt-1"><input id="uploadFile" type="file" class="d-none" multiple="multiple">
