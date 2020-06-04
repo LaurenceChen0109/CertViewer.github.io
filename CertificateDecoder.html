@@ -35,6 +35,15 @@
 
 		$(document).ready(function(){ 
 
+			var btnDecode = document.getElementById('decode');
+			btnDecode.style.visibility = 'hidden';
+
+			var ctrlErr = document.getElementById('upload-error');
+			ctrlErr.style.visibility = 'hidden';
+			
+			var ctrlCert = document.getElementById('certificate');
+			ctrlCert.style.visibility = 'hidden';
+
 			console.log( "URL ... \n", window.location.href )
 
 			var cert = decodeURI(getUrlParam( 'value', 'empty' ))
