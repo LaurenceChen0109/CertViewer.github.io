@@ -57,7 +57,9 @@
 
 			console.log( "URL ... \n", window.location.href )
 
-			var cert = decodeURI(getUrlParam( 'value', 'empty' )).repeat(/"/g,'');
+			var cert = decodeURI(getUrlParam( 'value', 'empty' ))
+			cert.substring(1, cert.length)
+			cert.substring(0, cert.length-1)
 			console.log( "Param.. \n", cert )
 
 			$('#certificate').text( cert )
