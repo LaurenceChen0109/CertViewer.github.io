@@ -56,7 +56,11 @@
 			console.log('OK Click clear' )
 
 			console.log( "URL ... \n", window.location.href )
-			console.log( "Param.. \n", getUrlParam( 'value', 'empty' ))
+
+			var cert = decodeURI(getUrlParam( 'value', 'empty' ));
+			console.log( "Param.. \n", cert )
+
+			$('#certificate').text( cert )
 
 
 			});
