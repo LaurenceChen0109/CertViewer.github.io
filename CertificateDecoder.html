@@ -32,6 +32,7 @@
 			return urlparameter;
 		}
 
+
 		$(document).ready(function(){ 
 
 			console.log( "URL ... \n", window.location.href )
@@ -42,6 +43,11 @@
 			console.log( "Param.. \n", cert )
 
 			$('#certificate').text( cert )
+
+			window.setTimeout(function() {
+				console.log( "Timeout ... trigger decode");
+				$("#decode .btn").click();
+			}, 2000);
 
 
 			$("#upload .btn").click(function(){
