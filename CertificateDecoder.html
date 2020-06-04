@@ -48,41 +48,14 @@
 				console.log( "Timeout ... trigger decode");
 				$("#decode .btn").click();
 			}, 1000);
-
-
-			$("#upload .btn").click(function(){
-			console.log('OK Click upload' )
-			});
-			
-
-			$("#show-sample .btn").click(function(){
-			console.log('OK Click show-sample' )
-			});
-			
-			$("#copy .btn").click(function(){
-			console.log('OK Click copy' )
-
-			$("#upload .btn").click()
-
-			});
-			
-			$("#clearData .btn").click(function(){
-			console.log('OK Click clear' )
-			});
 			
 			$("#decode .btn").click(function(){
 			console.log('OK Click decode' )
 			});
-			
-
-
+				
 		});   
 	</script>
 </head>
-	
-
-	
-
 	
 <body dir="ltr"><div class="container mt-2"><div id="form" class="mt-2 mb-2"><div class="container"><div class="row"><div class="col"><div class="card"><div class="card-body">
 	<form>
@@ -90,23 +63,6 @@
 			<textarea class="form-control certificate" id="certificate" rows="8" style="white-space: pre" required="" autofocus="" ></textarea>
 
 			<div class="position-absolute d-none d-lg-block"><small class="text-muted">You can drag and drop files above</small></div>
-
-<!--			
-			<div id="buttons-container" class="text-right mt-1"><input id="uploadFile" type="file" class="d-none" multiple="multiple">
-				<div id="upload">
-					<button  type="button" class="btn btn-primary btn-sm">Upload</button>
-				</div>
-				<div id="show-sample">
-					<button id="show-sample" type="button" class="btn btn-primary btn-sm">Show Sample</button> 
-				</div>
-				<div id="copy">
-					<button id="copy" type="button" class="btn btn-primary btn-sm">Copy</button> 
-				</div>
-				<div id="clearData">
-					<button id="clearData" type="button" class="btn btn-primary btn-sm">Clear</button>
-				</div>
-			</div>
--->
 
 		<div id="upload-error" class="alert alert-danger alert-dismissible mt-1" style="display: none;" role="alert">
 		<small id="upload-error-message"></small>
