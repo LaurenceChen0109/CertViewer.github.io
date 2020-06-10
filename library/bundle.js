@@ -2704,10 +2704,6 @@
                             e.addBasicContentItem(r, "Expires On", n.notAfter),
                             e.addBasicContentItem(r, "SHA-256 Fingerprint", n.sha256FingerPrint),
                             e.addBasicContentItem(r, "SHA-1 Fingerprint", n.sha1FingerPrint)
-
-                        console.log("e...", e);
-                        console.log("n...", n);
-                        window.varCert = n;
                     }
                 }, {
 
