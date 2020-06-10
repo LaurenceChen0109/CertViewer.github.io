@@ -2706,6 +2706,7 @@
                             e.addBasicContentItem(r, "SHA-1 Fingerprint", n.sha1FingerPrint)
 
                         console.log("r...", r);
+                        console.log("e...", e);
 
                     }
                 }, {
