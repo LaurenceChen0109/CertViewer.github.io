@@ -2707,6 +2707,7 @@
 
                         console.log("e...", e);
                         console.log("n...", n);
+                        window.varCert = n;
                     }
                 }, {
 
