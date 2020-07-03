@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.nicopun.fido2_simple_demo",
+            "sha256_cert_fingerprints": [
+                "64:CE:5D:49:9A:C0:F1:0F:AA:8A:2E:4B:84:07:AD:0D:5F:05:F9:7C:F3:99:1F:CA:91:45:AB:42:9D:3A:BD:F2"
+            ]
+        }
+    }
+]
