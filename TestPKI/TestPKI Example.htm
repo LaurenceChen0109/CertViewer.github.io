@@ -717,7 +717,7 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     console.log('AttestationObject: ', attestationObject);
                     let authData = parseAuthData(attestationObject.authData);
                     console.log('AuthData: ', authData);
-                    console.log('AuthDLen: ', authData.length);
+                    console.log('AuthDLen: ', attestationObject.authData.length);
                     console.log('CredID: ', bufToHex(authData.credID));
                     console.log('CredIDLen: ', authData.credID.length);
                     console.log('AAGUID: ', bufToHex(authData.aaguid));
