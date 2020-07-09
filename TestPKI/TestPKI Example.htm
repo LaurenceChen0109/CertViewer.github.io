@@ -1278,6 +1278,8 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 window.crypto.subtle.exportKey("raw", local_publicKey).then(
                     function(keydata) {
                         exportECPublicKeyArray = keydata;
+                        console.log("local_publicKey", local_publicKey);
+                        console.log("local_publicKey", bufToHex(local_publicKey));
                         console.log("exportECPublicKeyArray", bufToHex(exportECPublicKeyArray));
                     }
                 );
@@ -1584,8 +1586,6 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 window.crypto.subtle.exportKey("raw", local_publicKey).then(
                     function(keydata) {
                         exportECPublicKeyArray = keydata;
-                        console.log("local_publicKey", local_publicKey);
-                        console.log("local_publicKey", bufToHex(local_publicKey));
                         console.log("exportECPublicKeyArray", bufToHex(exportECPublicKeyArray));
                     }
                 );
