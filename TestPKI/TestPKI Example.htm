@@ -1296,6 +1296,10 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 );
 
             }).then(function(keybits) { //convert share secret to pinEncKey
+
+                console.log('keybits ..............', keybits);
+                console.log('Uint8Array(keybits)...', Uint8Array(keybits));
+
                 return crypto.subtle.digest(
                     "SHA-256",
                     new Uint8Array(keybits)
