@@ -1331,6 +1331,8 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 }, pinEncKey, userpin_digestBytes.slice(0, 16));
             }).then(function(cipherPIN) { // start get assertion
 
+                console.log("cipherPIN(original)", cipherPIN);
+
                 EncryptedPINArray = cipherPIN.slice(0, 16);
 
                 console.log("EncryptedPINArray", bufToHex(EncryptedPINArray.slice(0, 16)));
