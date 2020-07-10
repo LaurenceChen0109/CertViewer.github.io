@@ -1305,7 +1305,8 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     new Uint8Array(keybits)
                 );
             }).then(function(pinEncKeyBytes) {
-                console.log("pinEncKeyBytes", bufToHex(pinEncKeyBytes));
+                console.log("pinEncKeyBytes(original)...", pinEncKeyBytes);
+                console.log("pinEncKeyBytes(buf2hex)....", bufToHex(pinEncKeyBytes));
                 return crypto.subtle.importKey("raw",
                     pinEncKeyBytes,
                     "aes-cbc", false, ["encrypt"]);
