@@ -1320,7 +1320,8 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     "SHA-256",
                     data);
             }).then(function(userpin_digestBytes) {
-                console.log("userpin_digestBytes", bufToHex(userpin_digestBytes.slice(0, 16)));
+                console.log("userpin_digestBytes(original)", userpin_digestBytes.slice(0, 16));
+                console.log("userpin_digestBytes(buf2Hex )", bufToHex(userpin_digestBytes.slice(0, 16)));
                 var iv = new Uint8Array(16);
                 console.log("iv .... ", iv);
 
