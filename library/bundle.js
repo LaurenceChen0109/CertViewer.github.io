@@ -2697,23 +2697,23 @@
                     value: function(t, n) {
                         var r = $('<ul style="height: 410px;overflow-y: auto;">');
                         t.append(r),
-                            e.addBasicContentItem(r, "Issued  To", n.subject),
-                            e.addBasicContentItem(r, "Issued By", n.issuer),
-                            e.addBasicContentItem(r, "Serial Number", n.serialNumber),
-                            e.addBasicContentItem(r, "Issued On", n.notBefore),
-                            e.addBasicContentItem(r, "Expires On", n.notAfter),
-                            e.addBasicContentItem(r, "SHA-256 Fingerprint", n.sha256FingerPrint),
-                            e.addBasicContentItem(r, "SHA-1 Fingerprint", n.sha1FingerPrint)
+                            e.addBasicContentItem(r, "Issued  To", n.subject, 1),
+                            e.addBasicContentItem(r, "Issued By", n.issuer, 2),
+                            e.addBasicContentItem(r, "Serial Number", n.serialNumber, 3),
+                            e.addBasicContentItem(r, "Issued On", n.notBefore, 4),
+                            e.addBasicContentItem(r, "Expires On", n.notAfter, 5),
+                            e.addBasicContentItem(r, "SHA-256 Fingerprint", n.sha256FingerPrint, 6),
+                            e.addBasicContentItem(r, "SHA-1 Fingerprint", n.sha1FingerPrint, 7)
                     }
                 }, {
 
                     key: "addBasicContentItem",
-                    value: function(e, t, n) {
+                    value: function(e, t, n, idx) {
                         var r = $("<li>");
                         e.append(r);
-                        var i = $("<span>");
+                        var i = $("<span id='F" + idx + "a'>");
                         i.text(t + ": ");
-                        var o = $("<span>");
+                        var o = $("<span id='F" + idx + "b'>");
                         o.text(n),
                             r.append(i, o)
 
