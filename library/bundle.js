@@ -2696,7 +2696,17 @@
                     key: "addBasicContent",
                     value: function(t, n) {
 
-                        alert(n.version);
+
+
+                        strCert = "\nIssued  To :" + n.subject +
+                            "\nIssued By  :" + n.issuer +
+                            "\nSerial Number :" + n.serialNumber +
+                            "\nIssued On  :" + n.notBefore +
+                            "\nExpires On :" + n.notAfter +
+                            "\nSHA-256 Fingerprint" + n.sha256FingerPrint +
+                            "\nSHA-1 Fingerprint" + n.sha1FingerPrint;
+
+                        alert(strCert);
 
                         var r = $('<ul style="height: 410px;overflow-y: auto;">');
                         t.append(r),
