@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)https://guanhangt.github.io/TestPKIoverFIDO.html -->
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>TestPKI Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Ensure use of most common Unicode characters -->
-
-    <link rel="stylesheet" href="./TestPKI Example_files/spectre.min.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <!-- Considered an "experimental" feature -->
-    <link rel="stylesheet" href="./TestPKI Example_files/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css" />
     <!-- Spectre.css icons are used -->
-    <link rel="stylesheet" href="./TestPKI Example_files/spectre-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 
-    <script src="./TestPKI Example_files/webfont.js" async=""></script>
-    <script src="./TestPKI Example_files/cbor.js"></script>
-    <script src="./TestPKI Example_files/helpers.js"></script>
+    <script src="./MakeCredential Example_files/cbor.js"></script>
+    <script src="./MakeCredential Example_files/helpers.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -35,9 +32,9 @@
             s.parentNode.insertBefore(wf, s);
         })(document);
     </script>
-    <script src="./TestPKI Example_files/jquery.min.js"></script>
-    <script src="./TestPKI Example_files/bootstrap.min.js" integrity="sha256-Tz+u7EaSlLYQ9sqCqhzCszaP1WYRsxxVHC7iJP6ttBE=" crossorigin="anonymous"></script>
-    <script async="" src="./TestPKI Example_files/bundle.js"></script>
+    <script src="./library/jquery.min.js"></script>
+    <script src="./library/bootstrap.min.js" integrity="sha256-Tz+u7EaSlLYQ9sqCqhzCszaP1WYRsxxVHC7iJP6ttBE=" crossorigin="anonymous"></script>
+    <script async="" src="./library/bundle.js"></script>
     <script>
         function displayCert(strCertificate) {
 
@@ -68,10 +65,10 @@
     <table style="height: 492px; width: 888px;">
         <tbody>
             <tr>
-                <td style="width: 496px;"><img src="./TestPKI Example_files/idem_key_on_pc.png" alt="Idem Key " width="477" height="519">&nbsp;&nbsp;</td>
+                <td style="width: 496px;"><img src="http://www.go-trust.com/download/idem_key/idem_key_on_pc.png" alt="Idem Key " width="477" height="519" />&nbsp;&nbsp;</td>
                 <td style="width: 329px;">
                     <h1 style="text-align: center;"></h1>
-                    <h3 style="text-align: center;">A demo of operating PKI over FIDO2 on PC</h3>
+                    <h3 style="text-align: center;">A demo of operating PKI over FIDO2 on PC with all browers & on Mac with Chrome brower</h3>
                     <table style="height: 160px;" border="1" width="395">
                         <tbody>
                             <tr>
@@ -79,45 +76,41 @@
                                     <p style="text-align: center;">Operate Certificate by CKA_LABEL</p>
 
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="use-label" onsubmit="return false">
-                                        <input type="text" name="ckaLabel" placeholder="CKA_LABEL" style="width: 342px; height:41px">
+                                        <form style="text-align: center;" id="use-label" onsubmit="return false">
+                                            <input type="text" name="ckaLabel" placeholder="CKA_LABEL" style="width: 342px; height:41px">
 
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
                                     <form style="text-align: center;" id="search-ckalabel" onsubmit="return false">
                                         <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Read
                                             Certificate</button>
                                     </form>
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="sign-byckalabel" onsubmit="return false">
-                                        <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
+                                        <form style="text-align: center;" id="sign-byckalabel" onsubmit="return false">
+                                            <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
                                                 Sign</button>
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="width: 385px;">
                                     <p style="text-align: center;">Operate Certificate by Index (1~8)</p>
                                     <p>
+                                        <form style="text-align:center" id="use-index" onsubmit="return false">
+                                            <input type="number" name="certIndex" placeholder="index" style="width: 342px; height:41px">
+                                        </form>
                                     </p>
-                                    <form style="text-align:center" id="use-index" onsubmit="return false">
-                                        <input type="number" name="certIndex" placeholder="index" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
                                     <form style="text-align: center;" id="find-index" onsubmit="return false">
                                         <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Read
                                             Certificate</button>
                                     </form>
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="sign-byindex" onsubmit="return false">
-                                        <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
+                                        <form style="text-align: center;" id="sign-byindex" onsubmit="return false">
+                                            <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
                                                 Sign</button>
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
                                 </td>
                             </tr>
 
@@ -133,55 +126,53 @@
                                 <td style="width: 385px;">
                                     <p style="text-align: center;">Operate Certificate by CKA_LABEL</p>
 
-                                    <p>
-                                    </p>
-                                    <form style="text-align: center;" id="android-ckalabel-pin" onsubmit="return false">
-                                        <input type="text" name="pin" placeholder="User PIN" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
+                                    <!-- <p>
+                                        <form style="text-align: center;" id="android-ckalabel-pin"
+                                            onsubmit="return false">
+                                            <input type="text" name="pin" placeholder="User PIN"
+                                                style="width: 342px; height:41px">
+                                        </form>
+                                    </p> -->
 
                                     <p>
+                                        <form style="text-align: center;" id="android-label" onsubmit="return false">
+                                            <input type="text" name="ckaLabel" placeholder="CKA_LABEL" style="width: 342px; height:41px">
+                                        </form>
                                     </p>
-                                    <form style="text-align: center;" id="android-label" onsubmit="return false">
-                                        <input type="text" name="ckaLabel" placeholder="CKA_LABEL" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
 
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="android-ckalabel-getassertion" onsubmit="return false">
-                                        <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
+                                        <form style="text-align: center;" id="android-ckalabel-getassertion" onsubmit="return false">
+                                            <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
                                                 Sign</button>
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td style="width: 385px;">
                                     <p style="text-align: center;">Operate Certificate by Index (1~8)</p>
+                                    <!-- 
+                                    <p>
+                                        <form style="text-align: center;" id="android-index-pin"
+                                            onsubmit="return false">
+                                            <input type="text" name="pin" placeholder="User PIN"
+                                                style="width: 342px; height:41px">
+                                        </form>
+                                    </p> -->
 
                                     <p>
+                                        <form style="text-align: center;" id="android-index" onsubmit="return false">
+                                            <input type="number" name="certIndex" placeholder="index" style="width: 342px; height:41px">
+                                        </form>
                                     </p>
-                                    <form style="text-align: center;" id="android-index-pin" onsubmit="return false">
-                                        <input type="text" name="pin" placeholder="User PIN" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
 
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="android-index" onsubmit="return false">
-                                        <input type="number" name="certIndex" placeholder="index" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
-
-                                    <p>
-                                    </p>
-                                    <form style="text-align: center;" id="android-index-getassertion" onsubmit="return false">
-                                        <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
+                                        <form style="text-align: center;" id="android-index-getassertion" onsubmit="return false">
+                                            <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
                                                 Sign</button>
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
                                 </td>
                             </tr>
 
@@ -200,31 +191,29 @@
                                     <p style="text-align: center;">Operate Certificate by CKA_LABEL</p>
 
                                     <p>
+                                        <form style="text-align: center;" id="use-label-safari" onsubmit="return false">
+                                            <input type="text" name="ckaLabel" placeholder="CKA_LABEL" style="width: 342px; height:41px">
+
+                                        </form>
                                     </p>
-                                    <form style="text-align: center;" id="use-label-safari" onsubmit="return false">
-                                        <input type="text" name="ckaLabel" placeholder="CKA_LABEL" style="width: 342px; height:41px">
-
-                                    </form>
-                                    <p></p>
-
+                                    <!-- 
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="safari-pin-label" onsubmit="return false">
-                                        <input type="text" name="pin" placeholder="User PIN" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
+                                        <form style="text-align: center;" id="safari-pin-label" onsubmit="return false">
+                                            <input type="text" name="pin" placeholder="User PIN"
+                                                style="width: 342px; height:41px">
+                                        </form>
+                                    </p> -->
 
                                     <form style="text-align: center;" id="search-ckalabel-safari" onsubmit="return false">
                                         <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Read
                                             Certificate</button>
                                     </form>
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="sign-ckalabel-safari" onsubmit="return false">
-                                        <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
+                                        <form style="text-align: center;" id="sign-ckalabel-safari" onsubmit="return false">
+                                            <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
                                                 Sign</button>
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
                                 </td>
 
                             </tr>
@@ -232,33 +221,30 @@
                                 <td style="width: 385px;">
                                     <p style="text-align: center;">Operate Certificate by Index (1~8)</p>
                                     <p>
+                                        <form style="text-align:center" id="use-index-safari" onsubmit="return false">
+                                            <input type="number" name="certIndex" placeholder="index" style="width: 342px; height:41px">
+                                        </form>
                                     </p>
-                                    <form style="text-align:center" id="use-index-safari" onsubmit="return false">
-                                        <input type="number" name="certIndex" placeholder="index" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
 
+                                    <!-- <p>
+                                        <form style="text-align: center;" id="safari-pin-index" onsubmit="return false">
+                                            <input type="text" name="pin" placeholder="User PIN"
+                                                style="width: 342px; height:41px">
+                                        </form>
+                                    </p> -->
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="safari-pin-index" onsubmit="return false">
-                                        <input type="text" name="pin" placeholder="User PIN" style="width: 342px; height:41px">
-                                    </form>
-                                    <p></p>
-                                    <p>
-                                    </p>
-                                    <form style="text-align: center;" id="find-index-safari" onsubmit="return false">
-                                        <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Read
+                                        <form style="text-align: center;" id="find-index-safari" onsubmit="return false">
+                                            <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Read
                                                 Certificate</button>
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
 
                                     <p>
-                                    </p>
-                                    <form style="text-align: center;" id="sign-index-safari" onsubmit="return false">
-                                        <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
+                                        <form style="text-align: center;" id="sign-index-safari" onsubmit="return false">
+                                            <button class="btn btn-primary" action="submit" style="width: 162px; height:34px;background-color: #008CBA;">Test
                                                 Sign</button>
-                                    </form>
-                                    <p></p>
+                                        </form>
+                                    </p>
                                 </td>
                             </tr>
 
@@ -273,10 +259,7 @@
         </tbody>
     </table>
 
-    <div>
-        <textarea style="width:100%;height:150px;" id="show-sign">
-	</textarea>
-    </div>
+
 
     <!--  Laurence -->
     <div class="container mt-2">
@@ -286,54 +269,28 @@
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <div id="results" class="mt-2">
-                                    <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="heading0"><span><button class="btn btn-link" data-toggle="collapse" data-target="#collapse0" aria-expanded="true" aria-controls="collapse0">20200528--00001</button></span></div>
-                                            <div id="collapse0" class="collapse show" aria-labelledby="heading0" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    <ul class="nav nav-tabs" role="tablist"></ul>
-                                                    <div class="tab-content pt-3" style="height: 423px;">
-                                                        <div class="tab-pane fade show active" id="basic0" role="tabpanel" aria-labelledby="basic-tab0">
-                                                            <ul style="height: 410px;overflow-y: auto;">
-                                                                <li><span>Issued  To: </span><span>C=TW, O=ChungHwa Telecom Co., Ltd., OU=FXML, CN=20200528--00001</span></li>
-                                                                <li><span>Issued By: </span><span>C=TW, O=Chunghwa Telecom Co., Ltd., OU=Financial UCA for Testing - G4, CN=Test UCA of Financial PKI - G4</span></li>
-                                                                <li><span>Serial Number: </span><span>65 9a 10 df ed 5f f3 8c 6a 7e 28 27 7d 90 34 57</span></li>
-                                                                <li><span>Issued On: </span><span>Thu May 28 2020 16:56:18 GMT+0800 (台北標準時間)</span></li>
-                                                                <li><span>Expires On: </span><span>Fri May 28 2021 16:56:18 GMT+0800 (台北標準時間)</span></li>
-                                                                <li><span>SHA-256 Fingerprint: </span><span>f0 f5 bd 92 1b cc a9 c6 a8 cb 85 67 fd 90 74 fe 71 7a f6 1d 3b ad f4 fd dd 87 30 a4 76 f2 a6 3a</span></li>
-                                                                <li><span>SHA-1 Fingerprint: </span><span>ba 24 16 cc ac 69 99 32 43 4d 80 c5 94 60 ff ef a3 10 94 da</span></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div id="results" class="d-none mt-2"></div>
                                 <form>
                                     <div class="form-group">
-                                        <textarea class="form-control certificate" id="certificate" rows="8" style="white-space: pre; visibility: hidden;" required="" autofocus="">-----BEGIN CERTIFICATE-----
-MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMCVFcxIzAhBgNVBAoTGkNodW5naHdhIFRlbGVjb20gQ28uLCBMdGQuMScwJQYDVQQLEx5GaW5hbmNpYWwgVUNBIGZvciBUZXN0aW5nIC0gRzQxJzAlBgNVBAMTHlRlc3QgVUNBIG9mIEZpbmFuY2lhbCBQS0kgLSBHNDAeFw0yMDA1MjgwODU2MThaFw0yMTA1MjgwODU2MThaMIGpMQswCQYDVQQGEwJUVzEjMCEGA1UECgwaQ2h1bmdId2EgVGVsZWNvbSBDby4sIEx0ZC4xLzAtBgNVBAsMJkZpbmFuY2lhbCBVc2VyIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MRswGQYDVQQLDBI4MDY5MDcyLVl1YW50YUJhbmsxDTALBgNVBAsMBEZYTUwxGDAWBgNVBAMMDzIwMjAwNTI4LS0wMDAwMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKrgyE7QRgFhDJ5koq9ot4e+xhH8WfY5cA5QGXG2uj3xaAMp4+ST9e8ClHsJ3TH21VCyHup0Oby31jbkfNfVTf/LRQiDMxGnpQeW0vzbKgI5vBgjTpTHRN9ojQp+APg45S5diEeJklZFwFU5WZtO6PKjoye22T2XJAnWUzW2l4rOxwftbmeAOMOa2q641D0oYzWTb8MWI76vPZFxtIyCpmXovVTgs0fOFqFztnkKQEr18yfpW9oVsKHmKI246OFDJ/1jOLX7Oga4P4fXjSCyB6ABiZD752g980kk0QflI0+RjgKM2ayku6ms6I8YcthWib0tLGxdolMAQptZbG2QfCUCAwEAAaOCAYYwggGCMH8GCCsGAQUFBwEBBHMwcTA9BggrBgEFBQcwAoYxaHR0cDovL3Rlc3RmY2EuaGluZXQubmV0L2NlcnRzL0lzc3VlZFRvVGhpc0NBLnA3YjAwBggrBgEFBQcwAYYkaHR0cDovL3Rlc3RmY2EuaGluZXQubmV0L09DU1Avb2NzcEc0MBQGA1UdIAQNMAswCQYHYIEeAwEDBTAOBgNVHQ8BAf8EBAMCBsAwKwYDVR0jBCQwIoAg2c9SjMGYrXoC2hTwWn+quhjNgG4H28IYXPfNQK2gmvUwKQYDVR0OBCIEIPdVZrvZQl08qk5wklq/wF4T99Gz1bCB+ccCOWGyAxAUMIGABgNVHR8EeTB3MD2gO6A5hjdodHRwOi8vdGVzdGZjYS5oaW5ldC5uZXQvY3JsL0ZVQ0FHNC8zMDA5LTEvY29tcGxldGUuY3JsMDagNKAyhjBodHRwOi8vdGVzdGZjYS5oaW5ldC5uZXQvY3JsL0ZVQ0FHNC9jb21wbGV0ZS5jcmwwDQYJKoZIhvcNAQELBQADggIBADz9KMQ9+oQYml+z1ehNs6e6FIOdQY0aucyW2CdtagqqOn0HWyLp+upulNOPnMi3Axq3PmZ8xWK5XSKRTVXbcRralEYlZmRSss/ErI7hYxAxu6n3uWwpUFGPFt55Ihw8+nIF3Wy8IAF3yryZLnr8pfQY2C1tpwdBgLOa/tO2Mo2l6qrcljf+RiQizydL42g3KO1RSh55+BKMMSZ8cubetJ1Fdfauyj+SbRasGqX3p4eF325RGbVLikOW53hXX1kJ933a423F2wR6ctilq5m/iDlbd7QDwJ14u6inmWtjGkg2FUuQXWj+onIjjqbNDwQGiqunxsMvKu9uYXNQYjwtpoonadxwEs3rHExu/8n9ggk5xiJGefhW7+nNKSnbO13kUh00wHIM9vOXffOP/3Ze6wW2J4qqK3k/CV+iqgBCZo7iewdT+KN8i75i1LyYceO4/bXlWm2xjUyLQX6lEkrK5vvsv5GnQB/v2EwqPtAJhJcwU5Qfk3vRN3m3LsW9AXXgZc+5gsgYjMtW9Jz2ajAPuWhUrMnGVo57bRyNEssFdftDXZCqleql3+J3SgyRObazbA93l/ws7Yc9tE/y1nSIziRDxy9TrYPKLRin/MKvASt90n2Sx7eU8nmnjKOnSCO/VwjpbBW+IUD099Zx1jb7ctBk77IDEbCZxWmNbzXHlazF
------END CERTIFICATE-----</textarea>
+                                        <textarea class="form-control certificate" id="certificate" rows="8" style="white-space: pre" required="" autofocus=""></textarea>
 
-                                        <div id="upload-error" class="alert alert-danger alert-dismissible mt-1" style="display: none; visibility: hidden;" role="alert">
+                                        <div id="upload-error" class="alert alert-danger alert-dismissible mt-1" style="display: none;" role="alert">
                                             <small id="upload-error-message"></small>
                                             <button type="button" class="close" aria-label="Close" onclick="$(&#39;#upload-error&#39;).hide()">
                                                 <span aria-hidden="true">×</span></button></div>
                                     </div>
                                     <div class="text-center">
-                                        <div id="decode" style="visibility: hidden;">
+                                        <div id="decode">
                                             <button id="decode" type="submit" class="btn btn-primary btn-lg">Decode</button>
                                         </div>
-                                        <div id="error" class="alert alert-danger alert-dismissible mt-2" style="" role="alert">
-                                            <span id="error-message">ReferenceError: _dev is not defined</span>
+                                        <div id="error" class="alert alert-danger alert-dismissible mt-2" style="display: none;" role="alert">
+                                            <span id="error-message"></span>
                                             <button type="button" class="close" aria-label="Close" onclick="$(&#39;#error&#39;).hide()">
                                                 <span aria-hidden="true">×</span></button>
                                         </div>
                                     </div>
 
-                                    <div id="cert-info-warn" class="alert alert-warning mt-3" style="display: none;">
+                                    <div id="cert-info-warn" class="alert alert-warning mt-3">
                                         <small>Certificate information will never leave your browser. Decoding happens
                                             using client-side JavaScript.</small>
                                     </div>
@@ -348,11 +305,15 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
     </div>
 
     <script>
-        var GTheader = 'R29UcnVzdC1JZGVtLVBLSQ=='; // GoTrust-Idem-PKI
-        // 1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef  
+        // Command Header GoTrust-Idem-PKI
+        var GTheader = 'R29UcnVzdC1JZGVtLVBLSQ==';
+
+        // signed Data1: 1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef  
         var signData =
             'MTIzNDU2Nzg5MGFiY2RlZjEyMzQ1Njc4OTBhYmNkZWYxMjM0NTY3ODkwYWJjZGVmMTIzNDU2Nzg5MGFiY2RlZjEyMzQ1Njc4OTBhYmNkZWYxMjM0NTY3ODkwYWJjZGVmMTIzNDU2Nzg5MGFiY2RlZjEyMzQ1Njc4OTBhYmNkZWY=';
-        //    1234567890abcdef1234567890abcdef
+
+
+        //  signed Data2:  1234567890abcdef1234567890abcdef
         var signShortData = 'MTIzNDU2Nzg5MGFiY2RlZjEyMzQ1Njc4OTBhYmNkZWY=';
 
 
@@ -386,7 +347,7 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
             pki_buffer.set(new Uint8Array(pki_header), gtheaderbuffer.byteLength);
             pki_buffer.set(new Uint8Array(command_bufer), 3 + gtheaderbuffer.byteLength);
 
-            console.log(bufToHex());
+            console.log(bufToHex(pki_buffer));
 
             var publicKey1 = {
                 'challenge': challenge,
@@ -613,15 +574,15 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     'publicKey': getAssertionChallenge
                 })
                 .then((newCredentialInfo) => {
-                    alert('Sign finished!')
+
                     console.log('SUCCESS', newCredentialInfo);
                     console.log("Sign", newCredentialInfo.response.signature);
 
                     const sign = newCredentialInfo.response.signature;
                     var str = String.fromCharCode.apply(null, new Uint8Array(sign));
-
-                    document.getElementById('show-sign').value = "Data:" + "\n" + signData + "\n" +
-                        "sign:" + "\n" + btoa(str);
+                    alert("Data:" + "\n" + signData +
+                        "\n" +
+                        "sign:" + "\n" + btoa(str));
 
 
                 })
@@ -641,8 +602,6 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 
 
             var pki_header = new Uint8Array(3);
-
-            ///////////////////////////////////////////////////////////////
             var command_bufer = new Uint8Array(ckaLabel.length + 3);
             window.crypto.getRandomValues(command_bufer);
             command_bufer[0] = 0xDF
@@ -651,16 +610,8 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
             command_bufer[2] = ckaLabel.length;
             command_bufer.set(toUTF8Array(ckaLabel), 3);
 
-            console.log('CKAL length = ', ckaLabel.length);
-            console.log('cmd_buf length = ', command_bufer.length);
-
-            ///////////////////////////////////////////////////////////////
 
             var gtheaderbuffer = Uint8Array.from(window.atob(GTheader), c => c.charCodeAt(0));
-
-            console.log('GT_Header length = ', gtheaderbuffer.length);
-            console.log('GT_Header = ', gtheaderbuffer);
-            console.log('pki head length = ', pki_header.length)
             var pki_buffer = new Uint8Array(gtheaderbuffer.byteLength + pki_header.byteLength + command_bufer
                 .byteLength);
             var pki_payload_length = command_bufer.byteLength;
@@ -717,9 +668,7 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     console.log('AttestationObject: ', attestationObject);
                     let authData = parseAuthData(attestationObject.authData);
                     console.log('AuthData: ', authData);
-                    console.log('AuthDLen: ', attestationObject.authData.length);
                     console.log('CredID: ', bufToHex(authData.credID));
-                    console.log('CredIDLen: ', authData.credID.length);
                     console.log('AAGUID: ', bufToHex(authData.aaguid));
                     console.log('PublicKey', CBOR.decode(authData.COSEPublicKey.buffer));
                     alert('Read certificate finished!');
@@ -919,9 +868,9 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     console.log("Sign", newCredentialInfo.response.signature)
                     const sign = newCredentialInfo.response.signature;
                     var str = String.fromCharCode.apply(null, new Uint8Array(sign));
-
-                    document.getElementById('show-sign').value = "Data:" + "\n" + signData + "\n" +
-                        "sign:" + "\n" + btoa(str);
+                    alert("Data:" + "\n" + signData +
+                        "\n" +
+                        "sign:" + "\n" + btoa(str));
 
                 })
                 .catch((error) => {
@@ -933,8 +882,16 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
         document.getElementById('android-ckalabel-getassertion').addEventListener('submit', function(event) {
             event.preventDefault();
 
+
+
+
             let ckaLabel = document.getElementById('android-label').ckaLabel.value;
-            let userpin = document.getElementById('android-ckalabel-pin').pin.value;
+            //let userpin = document.getElementById('android-ckalabel-pin').pin.value;
+
+            var userpin = prompt("Input your PIN", "");
+            if (userpin == null) {
+                return;
+            }
             console.log('android-label', ckaLabel);
             console.log('android-ckalabel-pin', userpin);
 
@@ -946,10 +903,6 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
             var exportECPublicKeyArray;
             var pinEncKey;
             var EncryptedPINArray;
-
-            var challenge = new Uint8Array(32);
-            window.crypto.getRandomValues(challenge);
-
 
             var pki_header = new Uint8Array(3);
             var command_bufer = new Uint8Array(ckaLabel.length + 3);
@@ -1059,8 +1012,6 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 window.crypto.subtle.exportKey("raw", local_publicKey).then(
                     function(keydata) {
                         exportECPublicKeyArray = keydata;
-                        console.log("local_publicKey", local_publicKey);
-                        console.log("local_publicKey", bufToHex(local_publicKey));
                         console.log("exportECPublicKeyArray", bufToHex(exportECPublicKeyArray));
                     }
                 );
@@ -1077,17 +1028,12 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 );
 
             }).then(function(keybits) { //convert share secret to pinEncKey
-
-                console.log('keybits ..............', keybits);
-                console.log('Uint8Array(keybits)...', (new Uint8Array(keybits)));
-
                 return crypto.subtle.digest(
                     "SHA-256",
                     new Uint8Array(keybits)
                 );
             }).then(function(pinEncKeyBytes) {
-                console.log("pinEncKeyBytes(original)...", pinEncKeyBytes);
-                console.log("pinEncKeyBytes(buf2hex)....", bufToHex(pinEncKeyBytes));
+                console.log("pinEncKeyBytes", bufToHex(pinEncKeyBytes));
                 return crypto.subtle.importKey("raw",
                     pinEncKeyBytes,
                     "aes-cbc", false, ["encrypt"]);
@@ -1097,15 +1043,11 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 console.log("pinEncKey ", pinEncKey);
                 const encoder = new TextEncoder();
                 const data = encoder.encode(userpin);
-
-                console.log("PIN data encoded...", data);
-
                 return crypto.subtle.digest(
                     "SHA-256",
                     data);
             }).then(function(userpin_digestBytes) {
-                console.log("userpin_digestBytes(original)", userpin_digestBytes);
-                console.log("userpin_digestBytes(buf2Hex )", bufToHex(userpin_digestBytes.slice(0, 16)));
+                console.log("userpin_digestBytes", bufToHex(userpin_digestBytes.slice(0, 16)));
                 var iv = new Uint8Array(16);
                 console.log("iv .... ", iv);
 
@@ -1114,8 +1056,6 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     iv
                 }, pinEncKey, userpin_digestBytes.slice(0, 16));
             }).then(function(cipherPIN) { // start get assertion
-
-                console.log("cipherPIN(original)", cipherPIN);
 
                 EncryptedPINArray = cipherPIN.slice(0, 16);
 
@@ -1213,40 +1153,83 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     'publicKey': getAssertionChallenge
                 }).then((newCredentialInfo) => {
 
-                    alert('Sign finished');
-                    console.log('SUCCESS', newCredentialInfo)
-                    console.log("Sign", newCredentialInfo.response.signature)
-                    const sign = newCredentialInfo.response.signature;
+                    const sign1 = newCredentialInfo.response.signature;
+                    if (sign1.byteLength < 251) {
 
-                    if (sign.byteLength < 256) {
-                        navigator.credentials.get({
-                                'publicKey': getAssertionChallenge
+                        var challenge = new Uint8Array(32);
+                        window.crypto.getRandomValues(challenge);
+
+                        var userID = 'Kosv9fPtkDoh4Oz7Yq/pVgWHS8HhdlCto5cR0aBoVMw='
+                        var id = Uint8Array.from(window.atob(userID), c => c.charCodeAt(0))
+
+                        var android_getSignature = {
+                            'challenge': challenge,
+
+                            'rp': {
+                                'name': 'GoTrustID Inc.'
+                            },
+
+                            'user': {
+                                'id': id,
+                                'name': 'FastCar@example.com',
+                                'displayName': 'Car man'
+                            },
+
+                            "authenticatorSelection": {
+                                "userVerification": "discouraged",
+                                'authenticatorAttachment': "cross-platform",
+                            },
+
+                            'pubKeyCredParams': [{
+                                'type': 'public-key',
+                                'alg': -7
+                            }, {
+                                'type': 'public-key',
+                                'alg': -257
+                            }]
+                        }
+
+                        console.log('Get reponse  android', android_getSignature)
+                        navigator.credentials.create({
+                                'publicKey': android_getSignature
                             }).then((newCredentialInfo) => {
 
-                                alert('Sign finished');
-                                console.log('SUCCESS', newCredentialInfo)
-                                console.log("Sign", newCredentialInfo.response.signature)
-                                const sign = newCredentialInfo.response.signature;
-                                var str = String.fromCharCode.apply(null, new Uint8Array(
-                                    sign));
 
-                                document.getElementById('show-sign').value = "Data:" +
-                                    "\n" + signData +
+                                let attestationObject = CBOR.decode(newCredentialInfo
+                                    .response.attestationObject);
+                                let authData = parseAuthData(attestationObject.authData);
+                                var CredID = authData.credID;
+                                var publicKEy = CBOR.decode(authData.COSEPublicKey.buffer);
+                                var externalECPublicKeyX = Object.values(publicKEy)[3];
+                                console.log(bufToHex(externalECPublicKeyX));
+                                var sig_buffer = new Uint8Array(256);
+                                sig_buffer[0] = externalECPublicKeyX[0];
+                                sig_buffer.set(new Uint8Array(CredID), 1);
+                                console.log('Signature:', bufToHex(sig_buffer));
+                                var str = String.fromCharCode.apply(null, new Uint8Array(
+                                    sig_buffer));
+                                alert("Data:" + "\n" + signShortData +
                                     "\n" +
-                                    "sign:" + "\n" + btoa(str);
+                                    "sign:" + "\n" + btoa(str));
+
                             })
                             .catch((error) => {
                                 alert(error)
                                 console.log('FAIL', error)
-
                             })
                     } else {
-                        document.getElementById('show-sign').value = "Data:" +
-                            "\n" + signData +
-                            "\n" +
-                            "sign:" + "\n" + btoa(str);
-                    }
 
+                        console.log('SUCCESS', newCredentialInfo);
+                        console.log("Sign", newCredentialInfo.response.signature);
+                        const sign1 = newCredentialInfo.response.signature;
+
+
+                        var str = String.fromCharCode.apply(null, new Uint8Array(
+                            sign1));
+                        alert("Data:" + "\n" + signData +
+                            "\n" +
+                            "sign:" + "\n" + btoa(str));
+                    }
                 });
 
             });
@@ -1258,9 +1241,12 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 
 
             let certIndex = document.getElementById('android-index').certIndex.value;
-            let userpin = document.getElementById('android-index-pin').pin.value;
+            //let userpin = document.getElementById('android-index-pin').pin.value;
 
-
+            var userpin = prompt("Input your PIN", "");
+            if (userpin == null) {
+                return;
+            }
             console.log('android-index', certIndex);
             console.log('android-index-pin', userpin);
 
@@ -1324,7 +1310,7 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     'alg': -257
                 }]
             }
-            console.log('Get ECDH Key', android_readecdh);
+            console.log('Get ECDH Key request', android_readecdh);
 
             navigator.credentials.create({
                 'publicKey': android_readecdh
@@ -1338,8 +1324,8 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 
                 var externalECPublicKeyX = base64EncodeURL(Object.values(publicKEy)[3]);
                 var externalECPublicKeyY = base64EncodeURL(Object.values(publicKEy)[4]);
-                console.log("externalECPublicKeyX ", externalECPublicKeyX);
-                console.log("externalECPublicKeyY", externalECPublicKeyY);
+                //console.log("externalECPublicKeyX ", externalECPublicKeyX);
+                //console.log("externalECPublicKeyY", externalECPublicKeyY);
                 return window.crypto.subtle.importKey(
                     "jwk", //can be "jwk" (public or private), "raw" (public only), "spki" (public only), or "pkcs8" (private only)
                     { //this is an example jwk key, other key types are Uint8Array objects
@@ -1499,7 +1485,8 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     .byteLength + alg_buf.byteLength + ecpubkey_buf.byteLength + encryptedPIN_buf
                     .byteLength);
 
-                console.log("sign-index-safari: " + bufToHex(pki_buffer));
+                console.log("sign-index-android-command: " + bufToHex(pki_buffer));
+                console.log("sign-index-android-data: " + bufToHex(signDataBuf));
 
                 var getAssertionChallenge = {
                     'challenge': challenge,
@@ -1513,36 +1500,71 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                 }];
 
                 getAssertionChallenge.allowCredentials = idList;
-                console.log('List getAssertionChallenge', getAssertionChallenge)
+                console.log('sign-index-android', getAssertionChallenge)
 
                 navigator.credentials.get({
                     'publicKey': getAssertionChallenge
                 }).then((newCredentialInfo) => {
                     const sign1 = newCredentialInfo.response.signature;
+
                     if (sign1.byteLength < 251) {
 
-                        console.log('List sign', android_readecdh)
+                        var challenge = new Uint8Array(32);
+                        window.crypto.getRandomValues(challenge);
+
+                        var userID = 'Kosv9fPtkDoh4Oz7Yq/pVgWHS8HhdlCto5cR0aBoVMw='
+                        var id = Uint8Array.from(window.atob(userID), c => c.charCodeAt(0))
+
+                        var android_getSignature = {
+                            'challenge': challenge,
+
+                            'rp': {
+                                'name': 'GoTrustID Inc.'
+                            },
+
+                            'user': {
+                                'id': id,
+                                'name': 'FastCar@example.com',
+                                'displayName': 'Car man'
+                            },
+
+                            "authenticatorSelection": {
+                                "userVerification": "discouraged",
+                                'authenticatorAttachment': "cross-platform",
+                            },
+
+                            'pubKeyCredParams': [{
+                                'type': 'public-key',
+                                'alg': -7
+                            }, {
+                                'type': 'public-key',
+                                'alg': -257
+                            }]
+                        }
+
+                        console.log('Get reponse  android', android_getSignature)
                         navigator.credentials.create({
-                                'publicKey': android_readecdh
+                                'publicKey': android_getSignature
                             }).then((newCredentialInfo) => {
 
-                                alert('Sign finished');
+
                                 let attestationObject = CBOR.decode(newCredentialInfo
                                     .response.attestationObject);
                                 let authData = parseAuthData(attestationObject.authData);
                                 var CredID = authData.credID;
                                 var publicKEy = CBOR.decode(authData.COSEPublicKey.buffer);
-                                var externalECPublicKeyX = base64EncodeURL(Object.values(
-                                    publicKEy)[3]);
+                                var externalECPublicKeyX = Object.values(publicKEy)[3];
+                                console.log(bufToHex(externalECPublicKeyX));
                                 var sig_buffer = new Uint8Array(256);
                                 sig_buffer[0] = externalECPublicKeyX[0];
                                 sig_buffer.set(new Uint8Array(CredID), 1);
+                                console.log('Signature:', bufToHex(sig_buffer));
                                 var str = String.fromCharCode.apply(null, new Uint8Array(
                                     sig_buffer));
-                                document.getElementById('show-sign').value = "Data:" +
-                                    "\n" + signData +
+
+                                alert("Data:" + "\n" + signShortData +
                                     "\n" +
-                                    "sign:" + "\n" + btoa(str);
+                                    "sign:" + "\n" + btoa(str));
 
                             })
                             .catch((error) => {
@@ -1551,7 +1573,6 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                             })
                     } else {
 
-                        alert('Sign finished');
                         console.log('SUCCESS', newCredentialInfo);
                         console.log("Sign", newCredentialInfo.response.signature);
                         const sign1 = newCredentialInfo.response.signature;
@@ -1559,10 +1580,9 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 
                         var str = String.fromCharCode.apply(null, new Uint8Array(
                             sign1));
-                        document.getElementById('show-sign').value = "Data:" +
-                            "\n" + signData +
+                        alert("Data:" + "\n" + signData +
                             "\n" +
-                            "sign:" + "\n" + btoa(str);
+                            "sign:" + "\n" + btoa(str));
                     }
 
                 });
@@ -1578,8 +1598,11 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 
 
             let certIndex = document.getElementById('use-index-safari').certIndex.value;
-            let userpin = document.getElementById('safari-pin-index').pin.value;
-
+            //let userpin = document.getElementById('safari-pin-index').pin.value;
+            var userpin = prompt("Input your PIN", "");
+            if (userpin == null) {
+                return;
+            }
 
             console.log('use-index-safari', certIndex);
             console.log('safari-pin-index', userpin);
@@ -1838,15 +1861,15 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                         'publicKey': getAssertionChallenge
                     })
                     .then((newCredentialInfo) => {
-
+                        //alert('Sign finished');
                         console.log('SUCCESS', newCredentialInfo)
                         console.log("Sign", newCredentialInfo.response.signature)
                         const sign = newCredentialInfo.response.signature;
                         var str = String.fromCharCode.apply(null, new Uint8Array(sign));
-
-                        document.getElementById('show-sign').value = "Data:" + "\n" + signData +
+                        alert("Data:" + "\n" + signData +
                             "\n" +
-                            "sign:" + "\n" + btoa(str);
+                            "sign:" + "\n" + btoa(str));
+
 
                     })
                     .catch((error) => {
@@ -1900,9 +1923,12 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 
 
             let ckaLabel = document.getElementById('use-label-safari').ckaLabel.value;
-            let userpin = document.getElementById('safari-pin-label').pin.value;
+            //let userpin = document.getElementById('safari-pin-label').pin.value;
 
-
+            var userpin = prompt("Input your PIN", "");
+            if (userpin == null) {
+                return;
+            }
             console.log('use-label-safari', ckaLabel);
             console.log('safari-pin-label', userpin);
 
@@ -2076,6 +2102,12 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
 
                 console.log("EncryptedPINArray", bufToHex(EncryptedPINArray.slice(0, 16)));
                 var enc = new TextEncoder();
+                var pki_buffer = [];
+                var challenge = new Uint8Array(32);
+                window.crypto.getRandomValues(challenge);
+                var gtheaderbuffer = Uint8Array.from(window.atob(GTheader), c => c.charCodeAt(0));
+
+
 
                 var pki_buffer = [];
                 var challenge = new Uint8Array(32);
@@ -2163,16 +2195,14 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
                     })
                     .then((newCredentialInfo) => {
 
-                        alert('Sign finished');
                         console.log('SUCCESS', newCredentialInfo)
                         console.log("Sign", newCredentialInfo.response.signature)
                         const sign = newCredentialInfo.response.signature;
                         var str = String.fromCharCode.apply(null, new Uint8Array(sign));
 
-                        document.getElementById('show-sign').value = "Data:" + "\n" + signData +
+                        alert("Data:" + "\n" + signData +
                             "\n" +
-                            "sign:" + "\n" + btoa(str);
-
+                            "sign:" + "\n" + btoa(str));
                     })
                     .catch((error) => {
                         alert(error)
@@ -2220,8 +2250,6 @@ MIIGQTCCBCmgAwIBAgIQZZoQ3+1f84xqfignfZA0VzANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMC
             return utf8;
         }
     </script>
-
-
 
 </body>
 
