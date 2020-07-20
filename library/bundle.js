@@ -2696,7 +2696,7 @@
                     key: "addBasicContent",
                     value: function(t, n) {
 
-                        alert('Kuohae...', n.subject);
+                        alert(n.version);
 
                         var r = $('<ul style="height: 410px;overflow-y: auto;">');
                         t.append(r),
