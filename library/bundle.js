@@ -2695,6 +2695,9 @@
                 }, {
                     key: "addBasicContent",
                     value: function(t, n) {
+
+                        alert('Kuohae...', n.subject);
+
                         var r = $('<ul style="height: 410px;overflow-y: auto;">');
                         t.append(r),
                             e.addBasicContentItem(r, "Issued  To", n.subject, 1),
